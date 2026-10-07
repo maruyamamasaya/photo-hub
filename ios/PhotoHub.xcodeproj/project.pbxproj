@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09623195C3C640AA01BA5258 /* PhotoHubCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1768C11DE422A8D71300AADC /* PhotoHubCore */; };
+		24F78D761C9C2C3E0F0BD7E0 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6150EC18B810B04C79BA3C /* Views.swift */; };
+		3FFCE5327E1DDCD5A5CEFF49 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BC9FF31567E8DACB4C584 /* LibraryModel.swift */; };
+		450C153EAF22EE641F67B843 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2B2DDFD833643DC1702B5 /* IntegrationTests.swift */; };
+		59A5A0D0143F66D08174C798 /* PhotoHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33312C4AD601CF10ED759337 /* PhotoHubApp.swift */; };
+		6B245EF58EAB12FF15030C86 /* PhotoImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772D0B08D527B7FA0FE8118B /* PhotoImporter.swift */; };
+		6B31A9BA40CA75006CDE1F23 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019FCA07D6E5086FE2DCA71 /* Cloud.swift */; };
+		E4F03A13F1E5BFB641FDC876 /* PhotoHubCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7C7901E98F8676FF62E8F68D /* PhotoHubCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		951F47FF3EAC69ACDE5C6FB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA853653DDF70B1400934BB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08051F27631EA36C8463E283;
+			remoteInfo = PhotoHub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E6150EC18B810B04C79BA3C /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		1019FCA07D6E5086FE2DCA71 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		320128F615D57934021C0A83 /* photo-hub */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "photo-hub"; path = ..; sourceTree = SOURCE_ROOT; };
+		33312C4AD601CF10ED759337 /* PhotoHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHubApp.swift; sourceTree = "<group>"; };
+		35397868F41384409B36AE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		51D2B2DDFD833643DC1702B5 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		764BC9FF31567E8DACB4C584 /* LibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
+		772D0B08D527B7FA0FE8118B /* PhotoImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImporter.swift; sourceTree = "<group>"; };
+		B3B07C5D7EABE513442D2393 /* PhotoHub.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PhotoHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56F256A35BDF1735AB4A8BD /* PhotoHubTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PhotoHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66739065B8310B383EAB76A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09623195C3C640AA01BA5258 /* PhotoHubCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74462398CDEF48F1F552355 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F03A13F1E5BFB641FDC876 /* PhotoHubCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		003DC134D4D51CB097DCB472 /* PhotoHub */ = {
+			isa = PBXGroup;
+			children = (
+				1019FCA07D6E5086FE2DCA71 /* Cloud.swift */,
+				35397868F41384409B36AE61 /* Info.plist */,
+				764BC9FF31567E8DACB4C584 /* LibraryModel.swift */,
+				33312C4AD601CF10ED759337 /* PhotoHubApp.swift */,
+				772D0B08D527B7FA0FE8118B /* PhotoImporter.swift */,
+				0E6150EC18B810B04C79BA3C /* Views.swift */,
+			);
+			path = PhotoHub;
+			sourceTree = "<group>";
+		};
+		68A5C3FC61555ACC147C3A4E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				320128F615D57934021C0A83 /* photo-hub */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		8B1D35E41F5A099250DDCBAC /* PhotoHubTests */ = {
+			isa = PBXGroup;
+			children = (
+				51D2B2DDFD833643DC1702B5 /* IntegrationTests.swift */,
+			);
+			path = PhotoHubTests;
+			sourceTree = "<group>";
+		};
+		E11B7A4258E14E6FAFE05575 = {
+			isa = PBXGroup;
+			children = (
+				68A5C3FC61555ACC147C3A4E /* Packages */,
+				003DC134D4D51CB097DCB472 /* PhotoHub */,
+				8B1D35E41F5A099250DDCBAC /* PhotoHubTests */,
+				EB6C6359582EA555F566FB03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB6C6359582EA555F566FB03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3B07C5D7EABE513442D2393 /* PhotoHub.app */,
+				B56F256A35BDF1735AB4A8BD /* PhotoHubTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08051F27631EA36C8463E283 /* PhotoHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4334761FCA1F22912616D716 /* Build configuration list for PBXNativeTarget "PhotoHub" */;
+			buildPhases = (
+				607513CE5ADEFF60DBAF6816 /* Sources */,
+				66739065B8310B383EAB76A0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoHub;
+			packageProductDependencies = (
+				1768C11DE422A8D71300AADC /* PhotoHubCore */,
+			);
+			productName = PhotoHub;
+			productReference = B3B07C5D7EABE513442D2393 /* PhotoHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7915E7A0532A9B5ADBE89C32 /* PhotoHubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8FDB2A2A902FD47848E2858 /* Build configuration list for PBXNativeTarget "PhotoHubTests" */;
+			buildPhases = (
+				E1F72F730E181F9A45B287C8 /* Sources */,
+				C74462398CDEF48F1F552355 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DCC222FF6668028B8BA8E47 /* PBXTargetDependency */,
+			);
+			name = PhotoHubTests;
+			packageProductDependencies = (
+				7C7901E98F8676FF62E8F68D /* PhotoHubCore */,
+			);
+			productName = PhotoHubTests;
+			productReference = B56F256A35BDF1735AB4A8BD /* PhotoHubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA853653DDF70B1400934BB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 8B9BB3756B5A8193F0AFB27B /* Build configuration list for PBXProject "PhotoHub" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E11B7A4258E14E6FAFE05575;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7A0770798679A8999B328C1C /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EB6C6359582EA555F566FB03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08051F27631EA36C8463E283 /* PhotoHub */,
+				7915E7A0532A9B5ADBE89C32 /* PhotoHubTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607513CE5ADEFF60DBAF6816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B31A9BA40CA75006CDE1F23 /* Cloud.swift in Sources */,
+				3FFCE5327E1DDCD5A5CEFF49 /* LibraryModel.swift in Sources */,
+				59A5A0D0143F66D08174C798 /* PhotoHubApp.swift in Sources */,
+				6B245EF58EAB12FF15030C86 /* PhotoImporter.swift in Sources */,
+				24F78D761C9C2C3E0F0BD7E0 /* Views.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F72F730E181F9A45B287C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450C153EAF22EE641F67B843 /* IntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DCC222FF6668028B8BA8E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08051F27631EA36C8463E283 /* PhotoHub */;
+			targetProxy = 951F47FF3EAC69ACDE5C6FB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41A1074B41C85774D8A1B12D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhotoHub/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Photo Hub";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ダウンロードした原本を写真ライブラリに保存します。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "選択した写真の原本と撮影日時を取り込むために使用します。";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = personal.photohub;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4762CB685B47D6C0E084E2BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = personal.PhotoHubTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoHub.app/PhotoHub";
+			};
+			name = Debug;
+		};
+		A76473B449F1761871AEC806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BDCE1961698C1DDF2C109E23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhotoHub/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Photo Hub";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ダウンロードした原本を写真ライブラリに保存します。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "選択した写真の原本と撮影日時を取り込むために使用します。";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = personal.photohub;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEF6A9BC1AD6EB5FAEADF98A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E270035B93B5217C3E08E88D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = personal.PhotoHubTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoHub.app/PhotoHub";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4334761FCA1F22912616D716 /* Build configuration list for PBXNativeTarget "PhotoHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDCE1961698C1DDF2C109E23 /* Debug */,
+				41A1074B41C85774D8A1B12D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8B9BB3756B5A8193F0AFB27B /* Build configuration list for PBXProject "PhotoHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A76473B449F1761871AEC806 /* Debug */,
+				CEF6A9BC1AD6EB5FAEADF98A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F8FDB2A2A902FD47848E2858 /* Build configuration list for PBXNativeTarget "PhotoHubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4762CB685B47D6C0E084E2BF /* Debug */,
+				E270035B93B5217C3E08E88D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		7A0770798679A8999B328C1C /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1768C11DE422A8D71300AADC /* PhotoHubCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PhotoHubCore;
+		};
+		7C7901E98F8676FF62E8F68D /* PhotoHubCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PhotoHubCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EA853653DDF70B1400934BB9 /* Project object */;
+}
