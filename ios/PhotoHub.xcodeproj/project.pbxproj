@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1000000000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1000000000000000000002 /* Assets.xcassets */; };
 		09623195C3C640AA01BA5258 /* PhotoHubCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1768C11DE422A8D71300AADC /* PhotoHubCore */; };
 		24F78D761C9C2C3E0F0BD7E0 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6150EC18B810B04C79BA3C /* Views.swift */; };
 		3FFCE5327E1DDCD5A5CEFF49 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BC9FF31567E8DACB4C584 /* LibraryModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB1000000000000000000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6150EC18B810B04C79BA3C /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		1019FCA07D6E5086FE2DCA71 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		320128F615D57934021C0A83 /* photo-hub */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "photo-hub"; path = ..; sourceTree = SOURCE_ROOT; };
@@ -63,6 +65,7 @@
 		003DC134D4D51CB097DCB472 /* PhotoHub */ = {
 			isa = PBXGroup;
 			children = (
+				AB1000000000000000000002 /* Assets.xcassets */,
 				1019FCA07D6E5086FE2DCA71 /* Cloud.swift */,
 				35397868F41384409B36AE61 /* Info.plist */,
 				764BC9FF31567E8DACB4C584 /* LibraryModel.swift */,
@@ -117,6 +120,7 @@
 			buildPhases = (
 				607513CE5ADEFF60DBAF6816 /* Sources */,
 				66739065B8310B383EAB76A0 /* Frameworks */,
+				AB1000000000000000000003 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +188,15 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		AB1000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (AB1000000000000000000001 /* Assets.xcassets in Resources */,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		607513CE5ADEFF60DBAF6816 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -232,6 +245,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = personal.photohub;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -334,6 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = personal.photohub;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
