@@ -17,27 +17,116 @@ struct RootView: View {
 struct PhotoGrid: View {
     @EnvironmentObject var library: LibraryModel
     @State private var selection: [PhotosPickerItem] = []
+    @ScaledMetric(relativeTo: .caption2) private var tileTitleSize = 10
+    @ScaledMetric(relativeTo: .caption2) private var tileFormatSize = 7
     var album: Album?
-    private var visible: [Photo] { library.photos.filter { photo in photo.state != .deleting && (album == nil || library.members.contains { $0.albumID == album?.id && $0.photoID == photo.id }) } }
+    @State private var listSettings = false
+    @State private var selectedExtensions: Set<String> = []
+    @State private var favoritesOnly = false
+    @State private var sortField = "added"
+    @State private var ascending = false
+    private func fileExtension(_ photo: Photo) -> String { (photo.filename as NSString).pathExtension.lowercased() }
+    private var extensions: [String] { Array(Set(library.photos.map { fileExtension($0) }.filter { !$0.isEmpty })).sorted() }
+    private var visible: [Photo] {
+        library.photos.filter { photo in
+            photo.state != .deleting && (!favoritesOnly || photo.favorite)
+            && (selectedExtensions.isEmpty || selectedExtensions.contains(fileExtension(photo)))
+            && (album == nil || library.members.contains { $0.albumID == album?.id && $0.photoID == photo.id })
+        }.sorted { lhs, rhs in
+            let comparison: ComparisonResult
+            switch sortField {
+            case "captured": comparison = lhs.capturedAt.compare(rhs.capturedAt)
+            case "name": comparison = lhs.filename.compare(rhs.filename, options: .caseInsensitive)
+            case "size": comparison = lhs.bytes == rhs.bytes ? .orderedSame : lhs.bytes < rhs.bytes ? .orderedAscending : .orderedDescending
+            default: comparison = lhs.importedAt.compare(rhs.importedAt)
+            }
+            if comparison == .orderedSame { return ascending ? lhs.id < rhs.id : lhs.id > rhs.id }
+            return ascending ? comparison == .orderedAscending : comparison == .orderedDescending
+        }
+    }
     var body: some View {
         ScrollView {
             if visible.isEmpty { ContentUnavailableView("写真がありません", systemImage: "photo", description: Text("右上の＋から写真を取り込めます。")) }
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 3), spacing: 2) {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: 3), spacing: 6) {
                 ForEach(visible) { photo in
                     NavigationLink { PhotoDetail(initialID: photo.id, photoIDs: visible.map(\.id)) } label: {
-                        ZStack(alignment: .bottomTrailing) {
-                            PhotoImage(photo: photo, kind: .thumbnail).aspectRatio(1, contentMode: .fit).clipped()
-                            if photo.favorite { Image(systemName: "heart.fill").foregroundStyle(.white).padding(6) }
-                            if photo.state != .uploaded { Image(systemName: photo.state == .failed ? "exclamationmark.icloud" : "icloud.and.arrow.up").foregroundStyle(.white).padding(6).background(.black.opacity(0.4)) }
-                        }
+                        PhotoImage(photo: photo, kind: .thumbnail)
+                            .aspectRatio(1, contentMode: .fit)
+                            .overlay(alignment: .bottomLeading) {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    HStack {
+                                        Spacer(minLength: 0)
+                                        Text(photo.mime.replacingOccurrences(of: "image/", with: "").uppercased())
+                                            .font(.system(size: tileFormatSize, weight: .semibold))
+                                            .lineLimit(1)
+                                            .foregroundStyle(Color(red: 0.36, green: 0.41, blue: 0.35))
+                                            .padding(.horizontal, 4).padding(.vertical, 2)
+                                            .background(.white.opacity(0.9), in: RoundedRectangle(cornerRadius: 2))
+                                    }.padding(.trailing, 6)
+                                    Text(photo.filename)
+                                        .font(.system(size: tileTitleSize, weight: .medium))
+                                        .lineLimit(1)
+                                        .foregroundStyle(.white)
+                                        .padding(.horizontal, 8).padding(.vertical, 6)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .background(.black.opacity(0.58))
+                                }
+                                .allowsHitTesting(false)
+                            }
+                            .overlay(alignment: .topTrailing) {
+                                HStack(spacing: 4) {
+                                    if photo.favorite { Image(systemName: "heart.fill") }
+                                    if photo.state != .uploaded { Image(systemName: photo.state == .failed ? "exclamationmark.icloud" : "icloud.and.arrow.up") }
+                                }
+                                .font(.caption2).foregroundStyle(.white)
+                                .padding(6).background(.black.opacity(0.4), in: RoundedRectangle(cornerRadius: 4))
+                                .padding(6)
+                                .opacity(photo.favorite || photo.state != .uploaded ? 1 : 0)
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
                     }.buttonStyle(.plain)
                 }
             }
         }
         .navigationTitle(album?.name ?? "写真")
         .toolbar {
+            Button { listSettings = true } label: {
+                Image(systemName: "slider.horizontal.3")
+                    .foregroundStyle(favoritesOnly || !selectedExtensions.isEmpty ? Color.accentColor : Color.primary)
+                    .frame(minWidth: 44, minHeight: 44)
+            }.accessibilityLabel("フィルターと並び替え")
             if album == nil {
                 PhotosPicker(selection: $selection, maxSelectionCount: 100, matching: .images, preferredItemEncoding: .current, photoLibrary: .shared()) { Image(systemName: "plus") }.disabled(library.busy)
+            }
+        }
+        .sheet(isPresented: $listSettings) {
+            NavigationStack {
+                Form {
+                    Section("フィルター") {
+                        Toggle("お気に入りのみ", isOn: $favoritesOnly)
+                        ForEach(extensions, id: \.self) { ext in
+                            Toggle(".\(ext)", isOn: Binding(get: { selectedExtensions.contains(ext) }, set: { enabled in
+                                if enabled { selectedExtensions.insert(ext) } else { selectedExtensions.remove(ext) }
+                            }))
+                        }
+                        Button("条件を解除") { favoritesOnly = false; selectedExtensions.removeAll() }
+                    }
+                    Section("並び替え") {
+                        Picker("項目", selection: $sortField) {
+                            Text("追加日").tag("added")
+                            Text("撮影日").tag("captured")
+                            Text("タイトル").tag("name")
+                            Text("原本サイズ").tag("size")
+                        }
+                        Picker("並び順", selection: $ascending) {
+                            Text("降順").tag(false)
+                            Text("昇順").tag(true)
+                        }
+                    }
+                }
+                .navigationTitle("フィルターと並び替え")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar { ToolbarItem(placement: .confirmationAction) { Button("完了") { listSettings = false } } }
             }
         }
         .onChange(of: selection) { _, items in

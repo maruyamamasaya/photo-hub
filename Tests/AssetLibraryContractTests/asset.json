@@ -1,0 +1,42 @@
+{
+  "id": "sample-asset",
+  "libraryId": "local-library",
+  "kind": "image",
+  "name": "Sample study",
+  "note": "Contract fixture, no personal data",
+  "source": "import",
+  "createdAt": "2026-10-07T00:00:00Z",
+  "updatedAt": "2026-10-07T00:00:00Z",
+  "capturedAt": null,
+  "favorite": false,
+  "revision": 1,
+  "state": "ready",
+  "trashedAt": null,
+  "archivedAt": null,
+  "tags": [
+    {
+      "id": "sample-tag",
+      "name": "reference"
+    }
+  ],
+  "collections": [],
+  "files": [
+    {
+      "id": "sample-file",
+      "role": "original",
+      "originalFilename": "study.png",
+      "objectKey": "libraries/local-library/assets/sample-asset/files/sample-file",
+      "mimeType": "image/png",
+      "byteSize": 128,
+      "sha256": "sample-checksum",
+      "width": 40,
+      "height": 30,
+      "state": "ready",
+      "error": null
+    }
+  ],
+  "storageLocation": "local",
+  "originalOwnership": "managed",
+  "remoteAvailable": false,
+  "localCleanupPending": false
+}

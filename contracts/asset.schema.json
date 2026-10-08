@@ -1,0 +1,572 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:asset-library:v1",
+  "title": "Asset Library v1",
+  "$ref": "#/$defs/Asset",
+  "$defs": {
+    "Tag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "AssetFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "originalFilename",
+        "objectKey",
+        "mimeType",
+        "byteSize",
+        "sha256",
+        "width",
+        "height",
+        "state",
+        "error"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "originalFilename": {
+          "type": "string"
+        },
+        "objectKey": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "byteSize": {
+          "type": "integer"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "width": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "height": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "state": {
+          "type": "string"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "libraryId",
+        "kind",
+        "name",
+        "note",
+        "source",
+        "createdAt",
+        "updatedAt",
+        "capturedAt",
+        "favorite",
+        "revision",
+        "state",
+        "trashedAt",
+        "archivedAt",
+        "tags",
+        "collections",
+        "files",
+        "storageLocation",
+        "originalOwnership",
+        "remoteAvailable",
+        "localCleanupPending"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "libraryId": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "capturedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "favorite": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "integer"
+        },
+        "state": {
+          "type": "string"
+        },
+        "trashedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "archivedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Tag"
+          }
+        },
+        "collections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Collection"
+          }
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssetFile"
+          }
+        },
+        "storageLocation": {
+          "type": "string"
+        },
+        "originalOwnership": {
+          "type": "string"
+        },
+        "remoteAvailable": {
+          "type": "boolean"
+        },
+        "localCleanupPending": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AssetPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "total",
+        "nextCursor"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Asset"
+          }
+        },
+        "total": {
+          "type": "integer"
+        },
+        "nextCursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ImportItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "filename",
+        "state",
+        "assetId",
+        "code",
+        "message"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "assetId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ImportJob": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ImportItem"
+          }
+        }
+      }
+    },
+    "ApiError": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "AssetSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "revision"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "integer"
+        }
+      }
+    },
+    "BulkDownloadRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assets"
+      ],
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssetSelection"
+          }
+        }
+      }
+    },
+    "BulkOrganizeRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assets",
+        "entity",
+        "itemIds",
+        "mode"
+      ],
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssetSelection"
+          }
+        },
+        "entity": {
+          "type": "string"
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mode": {
+          "type": "string"
+        }
+      }
+    },
+    "ArchiveRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "archived"
+      ],
+      "properties": {
+        "revision": {
+          "type": "integer"
+        },
+        "archived": {
+          "type": "boolean"
+        }
+      }
+    },
+    "BulkArchiveRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assets",
+        "archived"
+      ],
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssetSelection"
+          }
+        },
+        "archived": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CollectionArchiveSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalCount",
+        "archiveCount",
+        "token"
+      ],
+      "properties": {
+        "normalCount": {
+          "type": "integer"
+        },
+        "archiveCount": {
+          "type": "integer"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "CollectionArchiveRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "archived",
+        "token"
+      ],
+      "properties": {
+        "archived": {
+          "type": "boolean"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "ArchiveResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "updated"
+      ],
+      "properties": {
+        "updated": {
+          "type": "integer"
+        }
+      }
+    },
+    "BulkOrganizeResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "updated"
+      ],
+      "properties": {
+        "updated": {
+          "type": "integer"
+        }
+      }
+    },
+    "TransferRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "destination",
+        "removeLocal"
+      ],
+      "properties": {
+        "revision": {
+          "type": "integer"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "removeLocal": {
+          "type": "boolean"
+        }
+      }
+    },
+    "StorageRoot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "path",
+        "syncedAt",
+        "state"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "syncedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": "string"
+        }
+      }
+    },
+    "SyncDirectoryRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "rootId"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "rootId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "SyncDirectoryResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "added",
+        "matched",
+        "moved",
+        "changed",
+        "missing",
+        "failed",
+        "rootId",
+        "limited"
+      ],
+      "properties": {
+        "added": {
+          "type": "integer"
+        },
+        "matched": {
+          "type": "integer"
+        },
+        "moved": {
+          "type": "integer"
+        },
+        "changed": {
+          "type": "integer"
+        },
+        "missing": {
+          "type": "integer"
+        },
+        "failed": {
+          "type": "integer"
+        },
+        "rootId": {
+          "type": "string"
+        },
+        "limited": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

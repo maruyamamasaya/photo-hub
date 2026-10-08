@@ -1,5 +1,9 @@
 # 開発・運用
 
+Mac・Windowsアプリ試作は [DESKTOP-OPERATIONS.md](docs/DESKTOP-OPERATIONS.md)。既存Web UIをElectronで表示し、独立した試作ライブラリを使う。Mac向け起動は実機未検証。
+
+新しいローカルWeb版の準備・起動・バックアップは [WEB-OPERATIONS.md](docs/WEB-OPERATIONS.md)。ルートの `scripts/setup-web.ps1` → `scripts/start-web.ps1` で `http://127.0.0.1:8765` を開く。Webと既存iOSの保存領域は別で、自動移行・同期は未接続。以下の手順は既存iOS版。
+
 ## Local Development
 `ios/PhotoHub.xcodeproj` をXcodeで開き、PhotoHub schemeでiPhoneシミュレータへ実行する。Xcode 26.6で確認、対応iOS 17以上。XcodeGenは `ios/project.yml` からの再生成時だけ必要（生成済みプロジェクトを含む）。
 

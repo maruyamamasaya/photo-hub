@@ -2,6 +2,13 @@
 
 | Feature | Primary paths | Search keywords / Key entry points | Related tests |
 | --- | --- | --- | --- |
+| Web画面 | `web/src/App.tsx`, `AssetDetail.tsx`, `Modal.tsx`, `api.ts` | `App`, `upload`, `retryImports`, `AssetDetail`, `fileUrl` | Web build、ブラウザ一連操作 |
+| Mac・Windowsアプリ試作 | `desktop/main.cjs`, `preload.cjs`, `api-process.cjs`, `platform.cjs`, `local-api/desktop_run.py` | `startApi`, `pythonExecutable`, `menuTemplate`, `activate`, `desktop_token`, `watch_parent` | `desktop/api-process.test.cjs`, `platform.test.cjs`, `local-api/tests/test_desktop.py`, `scripts/verify-desktop.ps1` / `verify-desktop.sh` |
+| ローカル素材API | `local-api/vault/app.py`, `service.py`, `repository.py`, `storage.py` | `create_app`, `Vault`, `process_item`, `recover`, `list_assets`, `require_revision` | `local-api/tests/test_vault.py` |
+| 原本の所在・ローカル参照 | `local-api/vault/service.py`, `repository.py`, `web/src/App.tsx`, `AssetDetail.tsx`, `scripts/create-local-storage-demo.py` | `storageLocation`, `originalOwnership`, `sync_directory`, `storage_roots`, `transfer_original`, `referenceKey` | `test_existing_original_migrates_*`, `test_local_directory_reference_*` |
+| 通常・アーカイブ | `web/src/ArchiveDialog.tsx`, `AssetDetail.tsx`, `local-api/vault/service.py`, `repository.py` | `archivedAt`, `bulk_archive`, `archive_collection`, `collection_archive_snapshot` | `test_archive_*`, `test_bulk_archive_*`, `test_collection_archive_*`, `test_v2_archive_migration_*` |
+| 共通契約・iOS準備 | `contracts/asset.schema.json`, `scripts/generate-contracts.py`, `Sources/AssetLibraryContract/` | `--check`, `Asset`, `AssetFile`, `AssetLibraryAPIClient` | API契約検証、`AssetLibraryContractTests`（Swift未実行） |
+| Web起動・検証 | `scripts/setup-web.ps1`, `start-web.ps1`, `verify-web.ps1`, `benchmark-library.py` | `127.0.0.1:8765`, `.local`, `TestClient` | Web verify、1,000件API測定 |
 | アプリ入口・画面 | `ios/PhotoHub/PhotoHubApp.swift`, `Views.swift` | `PhotoHubApp`, `RootView`, `PhotoGrid`, `PhotoDetail`, `SettingsView` | シミュレータ手動、実機チェックリスト |
 | 原本取り込み・派生 | `ios/PhotoHub/PhotoImporter.swift` | `importAsset`, `PHAssetResource`, `derivatives` | `IntegrationTests`、実写真手動 |
 | 写真モデル・SQLite | `Sources/PhotoHubCore/Models.swift`, `Repository.swift` | `Photo`, `UploadState`, `photos`, `albums`, `memberships`, `recoverInterruptedUploads` | `Tests/PhotoHubCoreTests/CoreTests.swift` |

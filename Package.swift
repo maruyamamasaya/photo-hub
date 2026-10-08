@@ -1,3 +1,3 @@
 // swift-tools-version: 5.9
 import PackageDescription
-let package = Package(name: "PhotoHubCore", platforms: [.iOS(.v17), .macOS(.v13)], products: [.library(name: "PhotoHubCore", targets: ["PhotoHubCore"])], targets: [.target(name: "PhotoHubCore", linkerSettings: [.linkedLibrary("sqlite3")]), .testTarget(name: "PhotoHubCoreTests", dependencies: ["PhotoHubCore"])])
+let package = Package(name: "PhotoHubCore", platforms: [.iOS(.v17), .macOS(.v13)], products: [.library(name: "PhotoHubCore", targets: ["PhotoHubCore"]), .library(name: "AssetLibraryContract", targets: ["AssetLibraryContract"])], targets: [.target(name: "PhotoHubCore", linkerSettings: [.linkedLibrary("sqlite3")]), .target(name: "AssetLibraryContract"), .testTarget(name: "PhotoHubCoreTests", dependencies: ["PhotoHubCore"]), .testTarget(name: "AssetLibraryContractTests", dependencies: ["AssetLibraryContract"], resources: [.copy("asset.json")])])
